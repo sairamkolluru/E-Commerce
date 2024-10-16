@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>General Store</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+        <link rel="stylesheet" href="dashboard.css"/>
+    </head>
+    <body>
+        <header class="header">
+            <a href="#" class="logo"> <i class="fa fa-shopping-basket"></i>generalstore's</a>
+
+            <nav class="navbar">
+                <a href="#home">home</a>
+                <a href="#features">features</a>
+                <a href="#products">products</a>
+                <a href="#review">review</a>
+                <a href="#blogs">blogs</a>
+                <a href="#about">about</a>
+            </nav>
+            <div class="icons">
+                <div class="fa fa-bars" id="menu-btn"></div>
+                <div class="fa fa-search" id="search-btn"></div>
+                <div class="fa fa-shopping-cart" id="cart-btn"></div>
+                <div class="fa fa-user" id="login-btn"></div>
+            </div>
+            <form class="search-form"><input type="search" id="search-box" placeholder="Search Here....">
+                <label for="search-box" class="fa fa-search"></label> 
+            </form>
+            
+            <form action="#" class="login-form">
+                <h3>login now</h3>
+                <input type="text" id="username" placeholder="Username" class="box" required pattern="[a-zA-Z0-9]{3,20}">
+                <input type="password" id="password" placeholder="Password" class="box" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}$">
+                <p>Forget Your Password <a href="forget.html">Click Here</a></p>
+                <p>Don't Have an Account <a href="reg.html">Create Now</a></p>
+                <input type="submit" value="Login " class="btn">
+                <p class="message" id="errorMessage"></p>
+            </form>
+        </header>
+
+        <!-- banner section -->
+        <section class="home" id="home">
+            <div class="content">
+                <!-- <img src="header.jpg"> -->
+                 <h1>General Store's</h1>
+                 <p>We have to there All products in this store</p>
+                 <a href="#" class="btn">shop now</a>
+
+            </div>
+             
+        </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <script src="dashboard.js"></script>
+    </body>
+</html>

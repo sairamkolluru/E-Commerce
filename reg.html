@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #6d89cf;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            margin-top: 100px;
+            border: 1px solid #302d2d;
+            border-radius: 5px;
+            background-color: #3f858a;
+        }
+        div {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        #username,#email,#mobile,#password{
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #e8d9d9;
+            border-radius: 3px;
+        }
+        button{
+            background-color: rgb(72, 72, 193);
+            color: white;
+            padding: 10px 20px; 
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        #button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sign Up </h1>
+        <form id="registration-form">
+            <div>
+                <label for="user name">User Name :</label>
+                <input type="text" id="username" placeholder="enter username" required pattern="[a-zA-Z0-9]{3,20}">
+            </div>
+            <div>
+                <label for="email">Email :</label>
+                <input type="email" id="email" placeholder="enter email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+            </div>
+            <div>
+                <label for="mobile">Mobile Number :</label>
+                <input type="tel" id="mobile" placeholder="enter mobile number" required pattern="[0-9]{10}">
+            </div>
+            <div>
+                <label for="password">Password :</label>
+                <input type="password" id="password" placeholder="enter password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}$">
+            </div>
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+
+    
+    <script>
+         // JavaScript code to handle form submission and password matching check
+         document.getElementById("registration-form").addEventListener("submit", function (e) {
+            e.preventDefault(); // Prevent the default form submission
+
+            const password = document.getElementById("password").value;
+            
+        
+                alert("Registration successful!");
+                // You can redirect the user to another page after successful registration
+                // window.location.href = "success.html";
+            }
+    );
+
+    
+
+      </script>
+      
+    
+
+    
+</body>
+</html>

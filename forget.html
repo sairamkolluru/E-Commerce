@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #476688;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #b1c858;
+           margin-top: 100px;
+            
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #0f0707;
+            border-radius: 3px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registration Page</h1>
+        <form id="registration-form">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" placeholder="username" required pattern="[a-zA-Z0-9]{3,20}">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}$">
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" placeholder="confirm-password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}$">
+            </div>
+            <div id="password-error" class="error"></div>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <script>
+        // JavaScript code to handle form submission and password matching check
+        document.getElementById("registration-form").addEventListener("submit", function (e) {
+            e.preventDefault(); // Prevent the default form submission
+
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirm-password").value;
+            const passwordError = document.getElementById("password-error");
+
+            if (password !== confirmPassword) {
+                passwordError.textContent = "Passwords do not match!";
+            } else {
+                passwordError.textContent = ""; // Clear the error message if passwords match
+                // You can add your registration logic here
+                alert("Registration successful!");
+                // You can redirect the user to another page after successful registration
+                // window.location.href = "success.html";
+            }
+        });
+    </script>
+</body>
+</html>
